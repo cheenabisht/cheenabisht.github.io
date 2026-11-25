@@ -11,8 +11,8 @@ export const siteConfig = {
   monogram: 'CB',
   title: 'AI/ML Engineer & Developer',
   github: 'https://github.com/cheenabisht',
-  email: 'your.email@example.com', // ← Placeholder: replace with real email
-  linkedin: 'https://linkedin.com/in/cheenabisht', // ← Placeholder: replace with real URL
+  email: 'cheenabisht84@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/cheena-bisht-2a6b9a414',
   siteUrl: 'https://cheenabisht.github.io',
 }
 

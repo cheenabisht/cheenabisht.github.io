@@ -49,7 +49,7 @@ export default function Contact() {
                 />
               </a>
 
-              {/* LinkedIn — Placeholder */}
+              {/* LinkedIn */}
               <a
                 href={siteConfig.linkedin}
                 target="_blank"
@@ -60,7 +60,7 @@ export default function Contact() {
                   <LinkedinIcon size={20} className="text-accent" />
                   <div>
                     <p className="font-medium text-text text-sm">LinkedIn</p>
-                    <p className="text-muted text-xs italic">Update with real profile URL</p>
+                    <p className="text-muted text-xs">linkedin.com/in/cheena-bisht-2a6b9a414</p>
                   </div>
                 </div>
                 <ArrowUpRight
@@ -69,7 +69,7 @@ export default function Contact() {
                 />
               </a>
 
-              {/* Email — Placeholder */}
+              {/* Email */}
               <a
                 href={`mailto:${siteConfig.email}`}
                 className="group flex items-center justify-between p-5 bg-surface border border-border rounded-xl hover:border-accent/30 transition-all duration-200"
@@ -78,7 +78,7 @@ export default function Contact() {
                   <Mail size={20} className="text-accent" />
                   <div>
                     <p className="font-medium text-text text-sm">Email</p>
-                    <p className="text-muted text-xs italic">Update with real email address</p>
+                    <p className="text-muted text-xs">{siteConfig.email}</p>
                   </div>
                 </div>
                 <ArrowUpRight
