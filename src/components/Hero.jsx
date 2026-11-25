@@ -128,25 +128,25 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          onClick={() => scrollToSection('about')}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted hover:text-accent transition-colors"
-          aria-label="Scroll to about section"
-        >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-          >
-            <ArrowDown size={16} />
-          </motion.div>
-        </motion.button>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        onClick={() => scrollToSection('about')}
+        className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 text-muted hover:text-accent transition-colors cursor-pointer"
+        aria-label="Scroll to about section"
+      >
+        <span className="text-[11px] tracking-widest uppercase">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
+        >
+          <ArrowDown size={16} />
+        </motion.div>
+      </motion.button>
     </section>
   )
 }

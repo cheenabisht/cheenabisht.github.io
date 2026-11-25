@@ -14,31 +14,33 @@
   --font-body: 'Inter', system-ui, sans-serif;
 }
 
-/* ── Base Styles ───────────────────────────────────────── */
+/* ── Base Styles (inside @layer base so utilities win) ─── */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+  }
 
-::selection {
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
 }
 
 /* ── Smooth scroll with reduced motion ─────────────────── */
@@ -56,14 +58,6 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ── Focus styles ──────────────────────────────────────── */
-
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
-  border-radius: 2px;
 }
 
 /* ── Scrollbar ─────────────────────────────────────────── */
