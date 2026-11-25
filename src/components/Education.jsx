@@ -1,4 +1,4 @@
-import { GraduationCap, MapPin, Calendar } from 'lucide-react'
+import { GraduationCap, BookOpen, MapPin, Calendar } from 'lucide-react'
 import AnimatedSection from './AnimatedSection'
 import { education } from '../data/content'
 
@@ -19,42 +19,60 @@ export default function Education() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.1}>
-          <div className="bg-surface border border-border rounded-xl p-8 md:p-12 max-w-3xl">
-            <div className="flex items-start gap-5">
-              <div className="hidden sm:flex w-14 h-14 rounded-xl bg-accent/10 items-center justify-center shrink-0">
-                <GraduationCap size={24} className="text-accent" />
-              </div>
+        <div className="space-y-6 max-w-3xl">
+          {education.map((item, i) => (
+            <AnimatedSection key={item.degree} delay={i * 0.08}>
+              <div className="bg-surface border border-border rounded-xl p-6 md:p-8 hover:border-accent/25 transition-colors duration-200">
+                <div className="flex items-start gap-5">
+                  <div
+                    className={`hidden sm:flex w-12 h-12 rounded-xl items-center justify-center shrink-0 ${
+                      item.current ? 'bg-accent/15' : 'bg-bg border border-border'
+                    }`}
+                  >
+                    {item.current ? (
+                      <GraduationCap size={22} className="text-accent" />
+                    ) : (
+                      <BookOpen size={20} className="text-muted" />
+                    )}
+                  </div>
 
-              <div className="space-y-4 flex-1">
-                <div>
-                  <h3 className="font-display text-xl md:text-2xl font-semibold">
-                    {education.degree}
-                  </h3>
-                  <p className="text-accent font-medium mt-1">{education.field}</p>
-                  <p className="text-muted text-sm mt-0.5">
-                    Specialization: {education.specialization}
-                  </p>
-                </div>
+                  <div className="space-y-3 flex-1">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <div>
+                        <h3 className="font-display text-xl font-semibold">
+                          {item.degree}
+                        </h3>
+                        <p className="text-accent font-medium text-sm mt-0.5">
+                          {item.field}
+                        </p>
+                        {item.specialization && (
+                          <p className="text-muted text-sm mt-0.5">
+                            Specialization: {item.specialization}
+                          </p>
+                        )}
+                      </div>
 
-                <div className="border-t border-border pt-4 space-y-3">
-                  <div className="flex items-center gap-2 text-sm text-muted">
-                    <GraduationCap size={14} className="text-accent/70 shrink-0" />
-                    <span>{education.university}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted">
-                    <MapPin size={14} className="text-accent/70 shrink-0" />
-                    <span>{education.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted">
-                    <Calendar size={14} className="text-accent/70 shrink-0" />
-                    <span>{education.duration} · {education.year}</span>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted bg-bg border border-border px-3 py-1 rounded-full shrink-0">
+                        <Calendar size={12} className="text-accent/80" />
+                        {item.duration}
+                      </span>
+                    </div>
+
+                    <div className="border-t border-border pt-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm text-muted">
+                      <span className="font-medium text-text/90">
+                        {item.institution}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm">
+                        <MapPin size={13} className="text-accent/70 shrink-0" />
+                        {item.location}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </AnimatedSection>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   )

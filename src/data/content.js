@@ -123,15 +123,33 @@ export const skills = {
   ],
 }
 
-export const education = {
-  degree: 'Bachelor of Technology',
-  field: 'Computer Science & Engineering',
-  specialization: 'Artificial Intelligence & Machine Learning',
-  university: 'Shri Ramswaroop Memorial University',
-  location: 'Lucknow, Uttar Pradesh',
-  duration: '2025 – 2029',
-  year: 'Second Year',
-}
+export const education = [
+  {
+    degree: 'Bachelor of Technology',
+    field: 'Computer Science & Engineering',
+    specialization: 'Artificial Intelligence & Machine Learning',
+    institution: 'Shri Ramswaroop Memorial University',
+    location: 'Lucknow, Uttar Pradesh',
+    duration: '2025 – 2029 · Second Year',
+    current: true,
+  },
+  {
+    degree: 'Senior Secondary (Class XII)',
+    field: 'Science Stream',
+    institution: 'Rani Lakshmi Bai Memorial Senior Secondary School',
+    location: 'Sector 14, Indira Nagar, Lucknow',
+    duration: '2025',
+    current: false,
+  },
+  {
+    degree: 'Secondary (Class X)',
+    field: 'High School',
+    institution: 'Rani Lakshmi Bai Memorial Senior Secondary School',
+    location: 'Sector 14, Indira Nagar, Lucknow',
+    duration: '2023',
+    current: false,
+  },
+]
 
 export const contact = {
   heading: 'Let\'s Connect',
