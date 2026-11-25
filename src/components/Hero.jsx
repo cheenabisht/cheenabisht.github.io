@@ -89,37 +89,28 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Portrait Placeholder */}
+            {/* Portrait */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.94 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               className="relative"
             >
-              <div className="w-72 h-80 md:w-80 md:h-96 rounded-2xl bg-surface border border-border overflow-hidden relative">
+              <div className="w-72 h-88 md:w-80 md:h-[420px] rounded-2xl bg-surface border border-border overflow-hidden relative shadow-2xl">
                 {/* Decorative accent bar */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent/60 via-accent to-accent/60" />
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent/60 via-accent to-accent/60 z-10" />
 
-                {/* Placeholder content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
-                  <div className="w-20 h-20 rounded-full border-2 border-dashed border-border flex items-center justify-center">
-                    <span className="font-display text-2xl font-bold text-accent">CB</span>
-                  </div>
-                  <p className="text-muted text-xs text-center leading-relaxed">
-                    Portrait coming soon
-                  </p>
-                </div>
-
-                {/* Subtle pattern overlay */}
-                <div
-                  className="absolute inset-0 opacity-[0.015]"
-                  style={{
-                    backgroundImage:
-                      'radial-gradient(circle at 1px 1px, rgba(245,245,244,0.3) 1px, transparent 0)',
-                    backgroundSize: '24px 24px',
-                  }}
+                <img
+                  src="/portrait.jpg"
+                  alt="Cheena Bisht"
+                  loading="eager"
+                  decoding="async"
+                  className="w-full h-full object-cover object-[50%_20%] transition-transform duration-700 hover:scale-[1.03]"
                 />
+
+                {/* Subtle editorial vignette */}
+                <div className="absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-bg/10 pointer-events-none" />
               </div>
 
               {/* Decorative floating element */}
